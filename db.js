@@ -1,11 +1,14 @@
 import { Sequelize } from "sequelize";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const db = new Sequelize(
-    "projetobarbearia",
-    "projetobarbearia_user",
-    "rOvRN6WUnM6s7GVtxG10VOteoIDVBZWB",
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PASS,
     {
-        host: "dpg-d4tanochg0os73cq0nrg-a.oregon-postgres.render.com",
+        host: process.env.DB_HOST,
         dialect: "postgres",
         port: "5432",
         dialectOptions: {
